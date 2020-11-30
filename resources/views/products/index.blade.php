@@ -16,7 +16,9 @@
             @foreach($products as $product)
             <tr>
                 <th scope="row">{{ $product->id }}</th>
-                <th scope="row">{{ $product->name }}</th>
+                <td>
+                <a href="{{ route('products.show', $product) }}">{{ $product->name }}</a>
+                </td>
                 <th scope="row">{{ $product->size }}</th>
                 <th scope="row">€{{ $product->price }}</th>
                 <th scope="row">{{ $product->free_shipping }}</th>
