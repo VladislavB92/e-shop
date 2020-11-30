@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Delivery;
 
@@ -14,7 +15,7 @@ class ProductsController extends Controller
             'products' => (new Product)->all()
         ]);
     }
-    
+
     public function create()
     {
         //

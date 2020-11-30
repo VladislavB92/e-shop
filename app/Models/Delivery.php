@@ -10,6 +10,12 @@ class Delivery extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'size',
+        'carrier',
+        'price',
+    ];
+
     public function products()
     {
         return $this->belongsTo(Product::class);
