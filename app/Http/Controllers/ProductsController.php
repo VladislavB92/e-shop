@@ -21,9 +21,7 @@ class ProductsController extends Controller
         return view('products.create', [Product::class]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //Store a newly created resource in storage.
     public function store(Request $request, Product $product)
     {
         $product = (new Product)->fill($request->all());
@@ -41,17 +39,15 @@ class ProductsController extends Controller
         return view('products.show', ['product' => $product]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
+    //Show the form for editing the specified resource.
+
     public function edit(Product $product)
     {
         return view('products.edit', ['product' => $product]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    //Update the specified resource in storage.
     public function update(Request $request, Product $product)
     {
         $product->update($request->all());
@@ -59,9 +55,7 @@ class ProductsController extends Controller
         return redirect()->route('products.show', $product);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    //Remove the specified resource from storage.
     public function destroy(Product $product)
     {
         $product->delete();
