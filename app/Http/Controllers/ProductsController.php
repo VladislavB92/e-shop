@@ -9,8 +9,13 @@ use App\Models\Delivery;
 
 class ProductsController extends Controller
 {
-    public function index()
+    public function index(Product $product)
     {
+
+        $product->load('deliveries');
+        $product->deliveries();
+        
+
         return view('products.index', [
             'products' => (new Product)->all()
         ]);
@@ -39,6 +44,10 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
+        // Loads relations between models.
+        $product->load('deliveries');
+        $product->deliveries();
+
         return view('products.show', [
             'product' => $product
         ]);

@@ -1,12 +1,32 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+<div class="container">
+    <div class="back_button">
         <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm">
             Back
         </a>
-        <div>
-            <h3>{{ $product->name }}</h3>
-            <p>€{{ $product->price }}</p>
-        </div>
+    </div><br>
+
+    <div>
+        <h2 style="font-weight:bold">{{ $product->name }}</h2>
+        <h3>Price: €{{ $product->getPrice() }}</h3>
+        <p>Package size: {{ $product->getSize() }}</p>
+
     </div>
+    <div class="deliveries">
+        Choose shipping option for the package size {{ $product->getSize() }}:
+        <p>
+
+            <ul>
+                @foreach($product->deliveries as $delivery)
+                <li> 
+                    <input type="radio" id="{{ $delivery->carrier }}" name="shipping_carrier" value="{{ $delivery->getPrice() }}">
+                    <label for="shipping_carrier">{{ $delivery->carrier }} - {{ $delivery->getPrice() }}</label>
+                </li>
+                @endforeach
+            </ul>
+
+        </p>
+    </div>
+</div>
 @endsection

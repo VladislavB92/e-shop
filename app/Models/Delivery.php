@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Product;
 
 class Delivery extends Model
 {
@@ -16,8 +15,8 @@ class Delivery extends Model
         'price',
     ];
 
-    public function products()
+    public function getPrice(): string
     {
-        return $this->belongsTo(Product::class);
+        return $this->price;
     }
 }

@@ -9,7 +9,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Size</th>
                 <th scope="col">Price</th>
-                <th scope="col">Free shipping</th>
+                <th scope="col">In stock</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +21,13 @@
                 </td>
                 <th scope="row">{{ $product->size }}</th>
                 <th scope="row">€{{ $product->price }}</th>
-                <th scope="row">{{ $product->free_shipping }}</th>
-                <td>
-                </td>
+                <th scope="row">
+                   @if ($product->getStock() < 1)
+                       Out of stock  
+                       @else
+                       {{ $product->getStock() }} units
+                   @endif 
+                </th>
             </tr>
             @endforeach
         </tbody>

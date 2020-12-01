@@ -14,11 +14,26 @@ class Product extends Model
         'name',
         'size',
         'price',
-        'free_shipping'
+        'avalaible_quantity'
     ];
 
-    public function delivery()
+    public function deliveries()
     {
-        return $this->hasMany(Delivery::class);
+        return $this->hasMany(Delivery::class, 'size','size');
+    }
+
+    public function getSize(): string
+    {
+        return $this->size;
+    }
+
+    public function getPrice(): string
+    {
+        return $this->price;
+    }
+
+    public function getStock(): string
+    {
+        return $this->avalaible_quantity;
     }
 }
