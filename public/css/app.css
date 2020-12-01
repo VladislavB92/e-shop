@@ -2833,7 +2833,7 @@ fieldset:disabled a.btn {
 .btn-warning {
   color: #212529;
   background-color: #ffed4a;
-  border-color: #ffed4a;
+  border-color: #3a392e;
 }
 
 .btn-warning:hover {
@@ -2860,7 +2860,7 @@ fieldset:disabled a.btn {
 .btn-warning:not(:disabled):not(.disabled):active,
 .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
-  color: #212529;
+  color: #ffffff;
   background-color: #ffe817;
   border-color: #ffe70a;
 }
