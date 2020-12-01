@@ -28,6 +28,10 @@
                 <input type="text" class="form-control" id="avalaible_quantity" name="avalaible_quantity" placeholder="Quantity in warehouse" value="{{ $product->getStock() }}">
             </div>
             <div class="form-group">
+                <label for="picture_url">Product's picture</label>
+                <input type="text" class="form-control" id="picture_url" name="picture_url" placeholder="Copy product's picture URL" value="{{ $product->getPicture() }}">
+            </div>
+            <div class="form-group">
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>

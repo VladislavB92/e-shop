@@ -22,8 +22,12 @@
                 <input type="text" class="form-control" id="price" name="price" placeholder="Price of the item in Euros">
             </div>
             <div class="form-group">
-                <label for="avalaible_quantity">How many items in stock?</label>
+                <label for="avalaible_quantity">Items in stock</label>
                 <input type="text" class="form-control" id="avalaible_quantity" name="avalaible_quantity" placeholder="Quantity in warehouse">
+            </div>
+            <div class="form-group">
+                <label for="picture_url">Product's picture</label>
+                <input type="text" class="form-control" id="picture_url" name="picture_url" placeholder="Copy product's picture URL">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Save</button>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateErrorsInProducts extends Migration
+class DropPictureFieldInProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,7 @@ class UpdateErrorsInProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('avalaible_quantity');
-        });
-
-        Schema::table('products', function (Blueprint $table) {
-            $table->integer('avalaible_quantity');
-            $table->timestamps();
+            $table->dropColumn('picture');
         });
     }
 
@@ -31,7 +26,7 @@ class UpdateErrorsInProducts extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            
+            //
         });
     }
 }

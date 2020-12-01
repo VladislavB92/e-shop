@@ -13,6 +13,9 @@
 
     <div>
         <h2 style="font-weight:bold">{{ $product->name }}</h2>
+        @if($product->getPicture() !== "")
+        <img src="{{ $product->getPicture() }}" alt="{{ $product->name }}" width="200" height="132">
+        @endif
         <h3>Price: €{{ $product->getPrice() }}</h3>
         <p>Package size: {{ $product->getSize() }}</p>
         <p> @if ($product->getStock() < 1) Out of stock @else In stock: {{ $product->getStock() }} @endif</p>

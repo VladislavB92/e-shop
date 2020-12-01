@@ -14,7 +14,8 @@ class Product extends Model
         'name',
         'size',
         'price',
-        'avalaible_quantity'
+        'avalaible_quantity',
+        'picture_url'
     ];
 
     public function deliveries()
@@ -35,5 +36,13 @@ class Product extends Model
     public function getStock(): string
     {
         return $this->avalaible_quantity;
+    }
+
+    public function getPicture(): string
+    {
+        if($this->picture_url == null) {
+            return "";
+        }
+        return $this->picture_url;
     }
 }
