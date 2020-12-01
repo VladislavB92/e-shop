@@ -52,7 +52,7 @@ class ProductsControllerTest extends TestCase
         );
     }
 
-    public function testDisplayAddProductPage(): void
+    public function testAccessAddProductPage(): void
     {
         $product = Product::factory()->create();
 
