@@ -24,7 +24,7 @@
                 <input type="text" class="form-control" id="price" name="price" placeholder="Price of the item in Euros" value="{{ $product->getPrice() }}">
             </div>
             <div class="form-group">
-                <label for="avalaible_quantity">How many items in stock?</label>
+E                <label for="avalaible_quantity">Items in stock</label>
                 <input type="text" class="form-control" id="avalaible_quantity" name="avalaible_quantity" placeholder="Quantity in warehouse" value="{{ $product->getStock() }}">
             </div>
             <div class="form-group">
